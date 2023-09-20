@@ -4028,7 +4028,7 @@
       .coreSpriteVideoNux,
       .coreSpriteViewCount,
       .coreSpriteWindowsStoreButton {
-        background-image: url(sprite_core_32f0a4f27407.png);
+        background-image: url(<%= asset_path 'sprite_core_32f0a4f27407.png' %>);
       }
       .coreSpriteActivityHeart,
       .coreSpriteAddText {
@@ -4683,7 +4683,7 @@
         .coreSpriteViewCount,
         .coreSpriteWindowsStoreButton,
         .coreSpriteWordmark {
-          background-image: url(sprite_core_2x_bcd90c1d4868.png);
+          background-image: url(<%= asset_path 'sprite_core_2x_bcd90c1d4868.png' %>);
         }
         .coreSpriteActivityHeart,
         .coreSpriteAddText {
@@ -12998,7 +12998,7 @@
         -webkit-align-self: center;
         -ms-flex-item-align: center;
         align-self: center;
-        background-image: url(home-phones.png);
+        background-image: url(<%= asset_path 'home-phones.png' %>);
         background-position: 0 0;
         background-size: 454px 618px;
         -webkit-flex-basis: 454px;
@@ -13011,7 +13011,7 @@
       @media screen and (-webkit-min-device-pixel-ratio: 1.5),
         screen and (min-resolution: 1.5dppx) {
         .yOZjD {
-          background-image: url(home-phones@2x.png);
+          background-image: url(<%= asset_path 'home-phones@2x.png' %>);
         }
       }
       .V64Sp {
@@ -18181,11 +18181,11 @@
           <article class="_4_yKc">
             <div class="yOZjD _80tAB">
               <div class="V64Sp">
-                <%= image_tag("screenshot1.jpg", alt: "", class: "RP4i1") %>
-                <%= image_tag("screenshot2.jpg", alt: "", class: "RP4i1 UVauz") %>
-                <%= image_tag("screenshot3.jpg", alt: "", class: "RP4i1 JtrJi") %>
-                <%= image_tag("screenshot4.jpg", alt: "", class: "RP4i1") %>
-                <%= image_tag("screenshot5.jpg", alt: "", class: "RP4i1") %>
+                <%= image_tag("screenshot1.jpg", alt: "", class: "RP4i1 JtrJi", id: "image1") %>
+                <%= image_tag("screenshot2.jpg", alt: "", class: "RP4i1 UVauz", id: "image2") %>
+                <%= image_tag("screenshot3.jpg", alt: "", class: "RP4i1", id: "image3") %>
+                <%= image_tag("screenshot4.jpg", alt: "", class: "RP4i1", id: "image4") %>
+                <%= image_tag("screenshot5.jpg", alt: "", class: "RP4i1", id: "image5") %>
 
               </div>
             </div>
@@ -18524,7 +18524,7 @@
               </div>
               <div class="qF0y9 Igw0E IwRSH eGOV_ _4EzTm _5VUwz">
                 <div class="_7UhW9 PIoXz MMzan _0PwGv uL8Hv">
-                  © 2022 Instagram from Meta
+                  © 2023 Instagram from Meta
                 </div>
               </div>
             </div>
@@ -18588,6 +18588,35 @@
           isDisabled;
       }
     </script>
+
+    <script>
+      // Get references to the image elements
+      const image1 = document.getElementById('image1');
+
+      // Array of image source URLs
+      const imageSources = [
+        '/assets/screenshot1.jpg',
+        '/assets/screenshot2.jpg',
+        '/assets/screenshot3.jpg',
+        '/assets/screenshot4.jpg',
+        '/assets/screenshot5.jpg',
+        // Add more image URLs as needed
+      ];
+
+      let currentIndex = 0;
+
+      // Function to change the displayed image
+      function changeImage() {
+        image1.src = imageSources[currentIndex];
+        currentIndex = (currentIndex + 1) % imageSources.length;
+        // Change images every 2000 milliseconds (2 second)
+        setTimeout(changeImage, 2000);
+      }
+
+      // Start the image rotation
+      changeImage();
+    </script>
+
 
     <div class="_-rjm"><div class="tA2fc"></div></div>
     <div class="_5qKD1"><div class="q5edG"></div></div>
