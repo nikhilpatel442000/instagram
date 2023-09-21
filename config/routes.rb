@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "welcome#login"
-  # re
+  resources :users
 
 end
